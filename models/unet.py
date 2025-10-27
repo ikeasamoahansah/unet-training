@@ -22,7 +22,7 @@ class UNet(nn.Module):
         self.up_2 = Upscaler(512, 256 // factor, bilinear)
         self.up_3 = Upscaler(256, 128 // factor, bilinear)
         self.up_4 = Upscaler(128, 64, bilinear)
-        self.output_c = nn.Conv2d(input_channels=64, output_channels=n_classes, kernel_size=1)
+        self.output_c = nn.Conv2d(in_channels=64, out_channels=n_classes, kernel_size=1)
 
 
     def forward(self, x):
